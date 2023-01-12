@@ -1,30 +1,15 @@
 -- maintenance
 DELIMITER |
 DROP FUNCTION IF EXISTS SafeDiv;
-CREATE FUNCTION SafeDiv (a INT, b INT) 
-RETURNS FLOAT 
-BEGIN 
-DECLARE result FLOAT;
-IF (b = 0) THEN
-   SET  result = 0;
+CREATE FUNCTION SafeDiv (a INT, b INT)
+RETURNS FLOAT
+BEGIN
+DECLARE res FLOAT;
+IF b = 0 THEN
+ SET res = 0;
 ELSE
-   SET result = a / b;
+ SET res = a / b;
 END IF;
-RETURNS result;
+RETURN res;
 END;
 |
-
--- DELIMITER |
--- DROP FUNCTION IF EXISTS SafeDiv;
--- CREATE FUNCTION SafeDiv (a INT, b INT)
--- RETURNS FLOAT
--- BEGIN
---   DECLARE result FLOAT;
---   IF b = 0 THEN
---     SET result = 0;
---   ELSE
---     SET result = a / b;
---   END IF;
---   RETURN result;
--- END;
--- |
