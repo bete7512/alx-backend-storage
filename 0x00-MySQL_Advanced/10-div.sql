@@ -1,11 +1,11 @@
 -- maintenance
-CREATE OR REPLACE FUNCTION SafeDiv(x INT, y INT) 
+CREATE OR REPLACE FUNCTION SafeDiv(a INT, b INT) 
 RETURNS INT
 BEGIN 
 -- if y = 0 return 0, else return x divided by y 
-IF (y = 0) THEN  
+IF (b = 0) THEN  
    RETURN 0; 
 ELSE  
-   RETURN x/y; 
+   RETURN a/b; 
 END IF; 
 END;
