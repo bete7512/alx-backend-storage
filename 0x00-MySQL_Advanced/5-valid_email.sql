@@ -1,5 +1,4 @@
 -- sql triggers for valid emails
-DELIMITER |
 CREATE TRIGGER valid_email_checker BEFORE UPDATE on users
 FOR EACH ROW 
 BEGIN
