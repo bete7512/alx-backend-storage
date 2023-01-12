@@ -1,11 +1,30 @@
 -- maintenance
-CREATE OR REPLACE FUNCTION SafeDiv(a INT, b INT) 
-RETURNS INT
+DELIMITER |
+DROP FUNCTION IF EXISTS SafeDiv;
+CREATE FUNCTION SafeDiv (a INT, b INT) 
+RETURNS FLOAT 
 BEGIN 
--- if y = 0 return 0, else return x divided by y 
-IF (b = 0) THEN  
-   RETURN 0; 
-ELSE  
-   RETURN a/b; 
-END IF; 
+DECLARE result FLOAT;
+IF (b = 0) THEN
+   SET  result = 0;
+ELSE
+   SET result = a / b;
+END IF;
+RETURNS result;
 END;
+|
+
+-- DELIMITER |
+-- DROP FUNCTION IF EXISTS SafeDiv;
+-- CREATE FUNCTION SafeDiv (a INT, b INT)
+-- RETURNS FLOAT
+-- BEGIN
+--   DECLARE result FLOAT;
+--   IF b = 0 THEN
+--     SET result = 0;
+--   ELSE
+--     SET result = a / b;
+--   END IF;
+--   RETURN result;
+-- END;
+-- |
