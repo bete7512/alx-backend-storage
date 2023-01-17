@@ -1,5 +1,5 @@
 // scripts to insert data to mongo database collection
-db.school.insertOne(
+db.school.insert(
   {
     name: "Holberton school"
   }

@@ -1,0 +1,2 @@
+//script to return from mongo database
+db.school.find()
