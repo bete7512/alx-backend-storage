@@ -1,0 +1,4 @@
+//scripts for mongo collection 
+db.school.deleteMany(
+  { "name": "Holberton school" }
+)
