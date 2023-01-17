@@ -1,0 +1,2 @@
+//script for mongo to count the number of items in a collection
+db.school.count()
